@@ -1,7 +1,3 @@
 export default function Hall() {
-    return(
-        <>
-            Hall 
-        </>
-    )
+  return <main>Hall</main>;
 }
