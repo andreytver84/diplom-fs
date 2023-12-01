@@ -3,7 +3,8 @@ import './AdminLayout.css';
 import { useStateContext } from '../contexts/ContentProvider';
 
 export default function AdminLayout() {
-  const { user, token } = useStateContext();
+  // const { user, token } = useStateContext();
+  const { token } = useStateContext();
 
   return (
     <div className="wrap">
