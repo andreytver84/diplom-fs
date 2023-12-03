@@ -3,7 +3,7 @@ import { useStateContext } from '../../contexts/ContentProvider';
 import axiosClient from '../../axios-client';
 
 export default function Login() {
-  const loginRef = useRef();
+  const emailRef = useRef();
   const passRef = useRef();
 
   const { setUser, setToken } = useStateContext();
@@ -11,7 +11,7 @@ export default function Login() {
   const onSubmitHandler = (e) => {
     e.preventDefault();
     const payload = {
-      login: loginRef.current.value,
+      email: emailRef.current.value,
       password: passRef.current.value,
     };
     //console.log(payload);
@@ -39,11 +39,11 @@ export default function Login() {
           <form className="login__form" onSubmit={onSubmitHandler}>
             <label className="login__label" htmlFor="email">
               E-mail
-              <input ref={loginRef} className="login__input" type="email" placeholder="example@domain.xyz" name="email" required />
+              <input ref={emailRef} className="login__input" type="email" placeholder="example@domain.xyz" name="email" />
             </label>
             <label className="login__label" htmlFor="pwd">
               Пароль
-              <input ref={passRef} className="login__input" type="password" placeholder="" name="password" required />
+              <input ref={passRef} className="login__input" type="password" placeholder="" name="password" />
             </label>
             <div className="text-center">
               <input value="Авторизоваться" type="submit" className="login__button" />
